@@ -1,6 +1,9 @@
 {
   "scripts": {
-    "test": "xo"
+    "test": "xo",
+    "release": "npm run update-version && npm run upload",
+    "upload": "webstore upload --auto-publish",
+		"update-version": "dot-json manifest.json version $TRAVIS_TAG"
   },
   "devDependencies": {
     "xo": "*"
